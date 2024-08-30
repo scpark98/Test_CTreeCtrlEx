@@ -7,6 +7,7 @@
 #include "Test_CTreeCtrlExDlg.h"
 
 #include "../../Common/MemoryDC.h"
+#include "../../Common/colors.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -196,18 +197,16 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	m_check_always_show_selection.SetCheck(on_top);
 	SetWindowPos(on_top  ? &wndTopMost : &wndNoTopMost, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
 
-	m_combo_color_theme.AddString(_T("default"));
-	m_combo_color_theme.AddString(_T("light_blue"));
-	m_combo_color_theme.AddString(_T("navy_blue"));
-	m_combo_color_theme.AddString(_T("dark_blue"));
-	m_combo_color_theme.AddString(_T("dark_gray"));
-	m_combo_color_theme.AddString(_T("dark"));
+	std::deque<CString> dq_color_theme = CSCColorTheme::get_color_theme_list();
+	for (auto theme_name : dq_color_theme)
+		m_combo_color_theme.AddString(theme_name);
 
-	m_combo_color_theme.SetCurSel(theApp.GetProfileInt(_T("setting"), _T("color theme"), 4));
+	int color_theme = theApp.GetProfileInt(_T("setting"), _T("color theme"), CSCTreeCtrl::color_theme_default);
+	m_combo_color_theme.SetCurSel(color_theme);
 
-	m_tree.set_color_theme(CSCTreeCtrl::color_theme_dark);
-	m_tree.set_back_color(RGB(43, 43, 43));
-	m_tree.set_text_color(RGB(213, 213, 213));
+	m_tree.set_color_theme(color_theme);
+	//m_tree.set_back_color(RGB(43, 43, 43));
+	//m_tree.set_text_color(RGB(213, 213, 213));
 
 	m_edit_indent = theApp.GetProfileInt(_T("setting"), _T("indent size"), 16);
 	m_tree.set_indent_size(m_edit_indent);
