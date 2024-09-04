@@ -201,7 +201,7 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	for (auto theme_name : dq_color_theme)
 		m_combo_color_theme.AddString(theme_name);
 
-	int color_theme = theApp.GetProfileInt(_T("setting"), _T("color theme"), CSCTreeCtrl::color_theme_default);
+	int color_theme = theApp.GetProfileInt(_T("setting"), _T("color theme"), CSCColorTheme::color_theme_default);
 	m_combo_color_theme.SetCurSel(color_theme);
 
 	m_tree.set_color_theme(color_theme);
