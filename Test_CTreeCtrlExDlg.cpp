@@ -213,16 +213,15 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	m_spin_indent.SetRange(0, 99);
 	UpdateData(false);
 
-#if 1
+#if 0
 	//탐색기 트리로 동작
 	m_tree.set_as_shell_treectrl(&m_ShellImageList, true);
-	m_tree.select_folder(_T("C:\\"));
 #else
 	//사용자 데이터 트리로 동작
 	//m_tree.load(_T("tree_item_unicode.txt"));
 	//m_tree.load(_T("tree_item_utf8.txt"));
 	m_tree.set_imagelist(IDI_FLOPPY, IDI_FIXEDDISK, IDI_HARDDISK, IDI_CDROM, IDI_NETWORKPLACE);
-	m_tree.use_drag_and_drop(true);
+	m_tree.set_use_drag_and_drop(true);
 	int image_size = theApp.GetProfileInt(_T("setting"), _T("image size"), 16);
 	//m_spin_iconSize.SetRange(8, 44);
 	//m_spin_iconSize.SetPos(image_size);

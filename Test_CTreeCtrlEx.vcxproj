@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{71FA2812-E661-4AC1-B60B-E61009A02450}</ProjectGuid>
     <RootNamespace>Test_CTreeCtrlEx</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <Keyword>MFCProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -35,7 +35,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -43,14 +43,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -195,6 +195,7 @@
     <ClInclude Include="..\..\Common\AutoFont.h" />
     <ClInclude Include="..\..\Common\CButton\GdiButton\GdiButton.h" />
     <ClInclude Include="..\..\Common\CComboBox\FontPreviewCombo\FontPreviewCombo.h" />
+    <ClInclude Include="..\..\Common\CEdit\SCEdit\SCEdit.h" />
     <ClInclude Include="..\..\Common\CMenu\SCMenuBar\SCMenu.h" />
     <ClInclude Include="..\..\Common\CMenu\SCMenuBar\SCMenuBar.h" />
     <ClInclude Include="..\..\Common\CMenu\SCMenuBar\SCMenuButton.h" />
@@ -222,6 +223,7 @@
     </ClCompile>
     <ClCompile Include="..\..\Common\CButton\GdiButton\GdiButton.cpp" />
     <ClCompile Include="..\..\Common\CComboBox\FontPreviewCombo\FontPreviewCombo.cpp" />
+    <ClCompile Include="..\..\Common\CEdit\SCEdit\SCEdit.cpp" />
     <ClCompile Include="..\..\Common\CMenu\SCMenuBar\SCMenu.cpp" />
     <ClCompile Include="..\..\Common\CMenu\SCMenuBar\SCMenuBar.cpp" />
     <ClCompile Include="..\..\Common\CMenu\SCMenuBar\SCMenuButton.cpp" />
