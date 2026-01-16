@@ -6,8 +6,8 @@
 #include "Test_CTreeCtrlEx.h"
 #include "Test_CTreeCtrlExDlg.h"
 
-#include "../../Common/MemoryDC.h"
-#include "../../Common/colors.h"
+#include "Common/MemoryDC.h"
+#include "Common/colors.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

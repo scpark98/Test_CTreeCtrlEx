@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include "../../Common/Functions.h"
-#include "../../Common/ResizeCtrl.h"
-#include "../../Common/CTreeCtrl/SCTreeCtrl/SCTreeCtrl.h"
-#include "../../Common/system/ShellImageList/ShellImageList.h"
+#include "Common/Functions.h"
+#include "Common/ResizeCtrl.h"
+#include "Common/CTreeCtrl/SCTreeCtrl/SCTreeCtrl.h"
+#include "Common/system/ShellImageList/ShellImageList.h"
 
 // CTest_CTreeCtrlExDlg dialog
 class CTest_CTreeCtrlExDlg : public CDialogEx
