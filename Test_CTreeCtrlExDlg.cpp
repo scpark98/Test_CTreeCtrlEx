@@ -197,7 +197,8 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 	m_check_always_show_selection.SetCheck(on_top);
 	SetWindowPos(on_top  ? &wndTopMost : &wndNoTopMost, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
 
-	std::deque<CString> dq_color_theme = CSCColorTheme::get_color_theme_list();
+	std::deque<CString> dq_color_theme;
+	CSCColorTheme::get_color_theme_list(dq_color_theme);
 	for (auto theme_name : dq_color_theme)
 		m_combo_color_theme.AddString(theme_name);
 
@@ -216,7 +217,10 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 #if 0
 	//탐색기 트리로 동작
 	m_tree.set_as_shell_treectrl(&m_ShellImageList, true);
-#else
+#elif 1
+	//json to tree
+	device_group_list_to_tree(get_exe_directory() + _T("\\DeviceGroupListAPI (flask).json"));
+#elif 0
 	//사용자 데이터 트리로 동작
 	//m_tree.load(_T("tree_item_unicode.txt"));
 	//m_tree.load(_T("tree_item_utf8.txt"));
@@ -259,6 +263,7 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 4\n\
 	41\n\
 	"));
+#endif
 
 	//m_tree.SetItemHeight(40);
 
@@ -268,7 +273,8 @@ BOOL CTest_CTreeCtrlExDlg::OnInitDialog()
 
 	//SetWindowPos( &wndTopMost, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE );
 	//m_tree.find_item(_T("루트2"), _T("apple"), 1);
-#endif
+
+	DragAcceptFiles();
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -619,4 +625,20 @@ void CTest_CTreeCtrlExDlg::OnBnClickedCheckHasLine()
 void CTest_CTreeCtrlExDlg::OnBnClickedCheckShowArea()
 {
 	m_tree.show_area(m_check_show_area.GetCheck());
+}
+
+void CTest_CTreeCtrlExDlg::device_group_list_to_tree(CString json_file)
+{
+	Json json;
+	json.load(json_file);
+
+	CString result = json.get_json_str(false);
+	//AfxMessageBox(result);
+	//return;
+
+	std::vector<std::map<CString, CString>> getManagerResult;
+	//Api::JsonToArray(result, _T("data"), &getManagerResult);
+	json.array_to_map(result, "objects", &getManagerResult);
+
+
 }

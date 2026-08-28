@@ -16,10 +16,11 @@ class CTest_CTreeCtrlExDlg : public CDialogEx
 public:
 	CTest_CTreeCtrlExDlg(CWnd* pParent = NULL);	// standard constructor
 
-	CResizeCtrl		m_resize;
-	LRESULT			OnMessageTreeCtrlCheckChanged(WPARAM wParam, LPARAM lParam);
+	CResizeCtrl			m_resize;
+	LRESULT				OnMessageTreeCtrlCheckChanged(WPARAM wParam, LPARAM lParam);
 
-	void			set_tree_image_list();
+	void				set_tree_image_list();
+	void				device_group_list_to_tree(CString json_file);
 
 	//Shell의 imagelist 및 shell과 관계된 멤버 제공
 	CShellImageList		m_ShellImageList;

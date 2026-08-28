@@ -35,7 +35,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Static</UseOfMfc>
@@ -43,14 +43,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <UseOfMfc>Dynamic</UseOfMfc>
@@ -199,12 +199,14 @@
     <ClInclude Include="..\..\Common\AutoFont.h" />
     <ClInclude Include="..\..\Common\CButton\GdiButton\GdiButton.h" />
     <ClInclude Include="..\..\Common\CEdit\SCEdit\SCEdit.h" />
-    <ClInclude Include="..\..\Common\CMenu\SCMenuBar\SCMenu.h" />
-    <ClInclude Include="..\..\Common\CMenu\SCMenuBar\SCMenuBar.h" />
-    <ClInclude Include="..\..\Common\CMenu\SCMenuBar\SCMenuButton.h" />
+    <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.h" />
+    <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenuBar.h" />
+    <ClInclude Include="..\..\Common\CMenu\CSCMenuBar\SCMenuButton.h" />
     <ClInclude Include="..\..\Common\colors.h" />
+    <ClInclude Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.h" />
     <ClInclude Include="..\..\Common\CTreeCtrl\SCTreeCtrl\SCTreeCtrl.h" />
     <ClInclude Include="..\..\Common\Functions.h" />
+    <ClInclude Include="..\..\Common\Json\rapid_json\json.h" />
     <ClInclude Include="..\..\Common\MemoryDC.h" />
     <ClInclude Include="..\..\Common\ResizeCtrl.h" />
     <ClInclude Include="..\..\Common\SCGdiplusBitmap.h" />
@@ -226,15 +228,16 @@
     </ClCompile>
     <ClCompile Include="..\..\Common\CButton\GdiButton\GdiButton.cpp" />
     <ClCompile Include="..\..\Common\CEdit\SCEdit\SCEdit.cpp" />
-    <ClCompile Include="..\..\Common\CMenu\SCMenuBar\SCMenu.cpp" />
-    <ClCompile Include="..\..\Common\CMenu\SCMenuBar\SCMenuBar.cpp" />
-    <ClCompile Include="..\..\Common\CMenu\SCMenuBar\SCMenuButton.cpp" />
+    <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenu.cpp" />
+    <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenuBar.cpp" />
+    <ClCompile Include="..\..\Common\CMenu\CSCMenuBar\SCMenuButton.cpp" />
     <ClCompile Include="..\..\Common\colors.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\Common\CScrollbar\SCScrollbar\SCScrollbar.cpp" />
     <ClCompile Include="..\..\Common\CTreeCtrl\SCTreeCtrl\SCTreeCtrl.cpp" />
     <ClCompile Include="..\..\Common\Functions.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
@@ -242,6 +245,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="..\..\Common\Json\rapid_json\json.cpp" />
     <ClCompile Include="..\..\Common\ResizeCtrl.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
